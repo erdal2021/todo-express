@@ -1,5 +1,5 @@
 # todo-express
-Todo app mit javascript + mysql Gruppe 5 
+Todo app / javascript + mysql Gruppe 5 
 
 Install/Requirements:
 npm install express mysql2
