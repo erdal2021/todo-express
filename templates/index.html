@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+
+    <form action="/todos" method="post">
+        <label for="todo">New ToDo:</label>
+        <input type="text" id="todo" name="todo" required>
+        <button type="submit">Add ToDo</button>
+    </form>
+
+    <ul>
+        % todos.forEach(todo => { %
+            <li>
+                %= todo.item %> - Status: %= todo.stat %>
+                <form action="/update_todo/%= todo.id %>" method="post">
+                    <label for="newStatus">Update Status:</label>
+                    <input type="text" id="newStatus" name="newStatus" required>
+                    <button type="submit">Update</button>
+                </form>
+                <form action="/delete_todo/%= todo.id %>" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        % }) %>
+    </ul>
+
+    <p>%= message %></p>
+</body>
+</html>
