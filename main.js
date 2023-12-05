@@ -44,15 +44,15 @@ async function resetAutoIncrement() {
 }
 
 
-// app.get("/", (req, res) => {
-//     console.log("Req:", req);
-//     res.send("Hello World!");
-//  })
+app.get("/", (req, res) => {
+    console.log("Req:", req);
+    res.send("Hello World!");
+ })
 
-//  app.post("/hello", (request, response) => {
-//     console.log("Req:", request.body);
-//     response.status(200).send("Hello AWS23-07!");
-//  })
+ app.post("/hello", (request, response) => {
+    console.log("Req:", request.body);
+    response.status(200).send("Hello AWS23-07!");
+ })
 
 
 
