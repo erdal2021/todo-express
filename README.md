@@ -2,7 +2,6 @@
 Todo app mit javascript + mysql Gruppe 5 
 
 Install/Requirements:
-npm init
 npm install express mysql2
 
 App Start: 
