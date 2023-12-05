@@ -38,24 +38,28 @@ async function createDBConnection() {
     }
 }
 
+async function resetAutoIncrement() {
+    const query = "ALTER TABLE todos AUTO_INCREMENT = 1";
+    await connection.execute(query);
+}
 
 
+// app.get("/", (req, res) => {
+//     console.log("Req:", req);
+//     res.send("Hello World!");
+//  })
 
-app.get("/", (req, res) => {
-    console.log("Req:", req);
-    res.send("Hello World!");
- })
-
- app.post("/hello", (request, response) => {
-    console.log("Req:", request.body);
-    response.status(200).send("Hello AWS23-07!");
- })
+//  app.post("/hello", (request, response) => {
+//     console.log("Req:", request.body);
+//     response.status(200).send("Hello AWS23-07!");
+//  })
 
 
 
  app.listen(port, async () => {
     console.log(`Server is running at http://localhost:${port}`);
     await createDBConnection();
+    await resetAutoIncrement();
 })
 
 
