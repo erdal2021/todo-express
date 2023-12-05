@@ -16,6 +16,9 @@ const DB_NAME = "todosdb";
 
 const templates = "templates";
 
+// express.urlencoded({ extended: true }): Diese Option ermöglicht es, komplexe Objekte und Arrays in das 
+// URL-codierte Format zu kodieren. Wenn sie auf true gesetzt ist, bedeutet dies, dass die 
+// Werte jeden Typ haben können und nicht nur Zeichenketten oder Arrays.
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (for example, CSS)
