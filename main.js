@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2/promise');
 
 const app = express();
-const port = 8000;
+const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -62,9 +62,13 @@ app.get("/", async (req, res) => {
 
 app.post("/todos", async (req, res) => {
     const connection = await createDbConnection();
-    const todo = req.body.todo;
-const query = "INSERT INTO todos (item, stat) VALUES (?, ?)";
-    const data = [todo, "open"];
+
+    const todo = req.body;
+    const query = "INSERT INTO todos (item, stat) VALUES (?, ?)";
+        const data = [todo.item, "open"];
+// const todo = req.body.todo;
+// const query = "INSERT INTO todos (item, stat) VALUES (?, ?)";
+//     const data = [todo, "open"];
 
     try {
         await connection.execute(query, data);

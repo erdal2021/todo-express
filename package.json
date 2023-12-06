@@ -24,6 +24,7 @@
     "has-symbols": "^1.0.3",
     "html": "^1.0.0",
     "html-express-js": "^1.1.1",
+    "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
     "object-inspect": "^1.13.1",
     "path": "^0.12.7",
