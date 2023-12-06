@@ -80,6 +80,27 @@ app.post("/todos", async (req, res) => {
     }
 });
 
+// app.get("/todos", async (req, res) => {
+//     const connection = await createDbConnection();
+//     console.log(req.body)
+//     const todo = req.body;
+//     const query = "SELECT * FROM todos;";
+//     const data = [todo.item, "open"];
+
+//     try {
+//         await connection.execute(query, data);
+//         res.redirect("/?message=ToDo created successfully");
+//     } catch (error) {
+//         console.error(`Error: ${error}`);
+//     } finally {
+//         connection.end();
+//     }
+// });
+
+
+
+
+
 app.post("/update_status/:todo_id/:new_status", async (req, res) => {
     const connection = await createDbConnection();
     const todoId = req.params.todo_id;
